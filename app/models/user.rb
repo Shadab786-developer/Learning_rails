@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  # self.table_name = "user"
-  # self.primary_key = "customer_id"
+  self.table_name = "user"
+  self.primary_key = "customer_id"
 
   def self.perform_curd
   # PERFORMING AN CURD OPERATION
