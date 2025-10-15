@@ -1,6 +1,11 @@
 class User < ApplicationRecord
+<<<<<<< HEAD
   # self.table_name = "user"
   # self.primary_key = "customer_id"
+=======
+  self.table_name = "user"
+  self.primary_key = "customer_id"
+>>>>>>> main
 
   def self.perform_curd
 
