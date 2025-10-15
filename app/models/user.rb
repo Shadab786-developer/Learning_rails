@@ -2,6 +2,10 @@ class User < ApplicationRecord
   self.table_name = "user"
   self.primary_key = "customer_id"
 
+  # THERE IS THE VALIDATION WHICH IS DECIDING WHEN THE DATA WAS SAVE INTO THE DATA BASE THERE ARE MANY TYPE OF VALIDATION LIKE uniquness , confirm, custom etc I USE THE PRESENCE VALIDATION HERE.
+  validates :user_name, presence: true
+
+
   def self.perform_curd
   # PERFORMING AN CURD OPERATION
 
