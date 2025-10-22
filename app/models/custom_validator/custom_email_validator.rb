@@ -1,6 +1,6 @@
 class CustomEmailValidator < ActiveModel::Validator
 def validate(record)
-  options[:field].each do |field|
+  options[:fields].each do |field|
     value = record.send(field)
     if value.blank?
       record.errros.add field, "is requried ?"
