@@ -1,0 +1,58 @@
+<% @customer%>
+
+<h1>Customer Registration</h1>
+
+<%= form_with model: @customer, local: true do |form| %>
+
+  <% if @customer.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prevented registration:</h2>
+      <ul>
+        <% @customer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :customer_name %><br>
+    <%= form.text_field :customer_name, placeholder: "Enter your name" %>
+  </div>
+
+  <div>
+    <%= form.label :customer_email %><br>
+    <%= form.email_field :customer_email, placeholder: "example123@gmail.com" %>
+  </div>
+
+  <div>
+    <%= form.label :customer_feedback %><br>
+    <%= form.text_area :customer_feedback, rows: 3, placeholder: "Your feedback..." %>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, placeholder: "Enter password" %>
+  </div>
+
+  <div>
+    <%= form.label :password_confirmation %><br>
+    <%= form.password_field :password_confirmation, placeholder: "Confirm password" %>
+  </div>
+
+  <br>
+  <div>
+    <%= form.submit "Register Customer" %>
+  </div>
+
+<% end %>
+
+<h1>Registered Customers</h1>
+
+    
+      <strong>Name:</strong> <%= @customer.customer_name %>,
+      <strong>Email:</strong> <%= @customer.customer_email %>,
+      <strong>Feedback:</strong> <%= @customer.customer_feedback %>
+    
+
+
